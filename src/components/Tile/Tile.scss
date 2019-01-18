@@ -1,0 +1,75 @@
+.tile {
+  align-items: center;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  margin: 2px;
+  opacity: 0;
+  position: relative;
+
+  &-defined {
+    //background-color: black;
+    border: 1px solid black;
+    color: white;
+    opacity: 1;
+  }
+
+  &-available {
+    border: 1px solid transparent;
+    border-image-slice: 1;
+    transition: opacity 600ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-top,
+  &-bottom {
+    &-left,
+    &-right {
+      border: 1px solid black;
+      border-image-slice: 1;
+      display: block;
+      height: 100%;
+      left: -1px;
+      position: absolute;
+      top: -1px;
+      width: 100%;
+    }
+  }
+
+  &-top {
+    border-top: 1px solid black;
+
+    &-left {
+      border-image: linear-gradient(135deg, black, transparent 12.5%, transparent 100%, black);
+    }
+
+    &-right {
+      border-image: linear-gradient(225deg, black, transparent 12.5%, transparent 100%, black);
+    }
+  }
+
+  &-bottom {
+    border-bottom: 1px solid black;
+
+    &-left {
+      border-image: linear-gradient(45deg, black, transparent 12.5%, transparent 100%, black);
+    }
+
+    &-right {
+      border-image: linear-gradient(315deg, black, transparent 12.5%, transparent 100%, black);
+    }
+  }
+
+  &-left {
+    border-left: 1px solid black;
+  }
+
+  &-right {
+    border-right: 1px solid black;
+  }
+}

@@ -1,0 +1,101 @@
+.board {
+  border: 1px solid black;
+  display: block;
+  height: 80vh;
+  position: relative;
+  width: 80vw;
+
+  &-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 750ms;
+  }
+
+  &-row {
+    display: flex;
+  }
+
+  &-tiles-panel {
+    align-items: center;
+    border: 1px solid black;
+    display: flex;
+    height: 140px;
+    justify-content: space-around;
+    width: 380px;
+  }
+
+  &-buttons-panel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    width: 32px;
+  }
+
+
+  $button-height: 32px;
+  $button-width: 80px;
+
+  &-button {
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-height: $button-height;
+    min-width: $button-height;
+
+    &-top,
+    &-bottom,
+    &-left,
+    &-right {
+      position: absolute;
+    }
+
+    &-top,
+    &-bottom {
+      height: $button-height;
+      left: calc(50% - #{$button-width / 2});
+      width: $button-width;
+    }
+
+    &-top {
+      top: -#{$button-height / 2};
+    }
+
+    &-bottom {
+      bottom: -#{$button-height / 2};
+    }
+
+    &-left,
+    &-right {
+      height: $button-width;
+      top: calc(50% - #{$button-width / 2});
+      width: $button-height;
+    }
+
+    &-left {
+      left: -#{$button-height / 2};
+    }
+
+    &-right {
+      right: -#{$button-height / 2};
+    }
+
+    &-refresh {
+      margin-top: 2px;
+    }
+  }
+}
